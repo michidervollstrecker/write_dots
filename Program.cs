@@ -24,6 +24,12 @@ namespace ConsoleApp1
                 Console.WriteLine(arr[i]);
                 i++;
             }
+            while (i > 0)
+            {
+                Console.WriteLine(arr[i - 1]);
+                i--;
+            }
+          
         }
     }
 }
