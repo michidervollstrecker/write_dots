@@ -7,10 +7,31 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             Console.WriteLine("Enter a number up to 15:");
-            int us = int.Parse(Console.ReadLine());
+            string input = Console.ReadLine();
+            try { Convert.ToInt32(input); 
+            }
+            catch
+            {
+                Console.WriteLine("Error: Invalid input");
+                Console.ReadLine();
+                return;
+            }
+            int us = Convert.ToInt32(input);
             if (us > 15)
             {
                 Console.WriteLine("Error: Number too large");
+                Console.ReadLine();
+                return;
+            }
+            if (us <= 0)
+            {
+                Console.WriteLine("Error: Number must be positive");
+                Console.ReadLine();
+                return;
+            }
+            if (us.GetType() != typeof(int))
+            {
+                Console.WriteLine("Error: Invalid input");
                 return;
             }
             string p = ".";
@@ -29,6 +50,7 @@ namespace ConsoleApp1
                 Console.WriteLine(arr[i - 1]);
                 i--;
             }
+            Console.ReadLine();
           
         }
     }
